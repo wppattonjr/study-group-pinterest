@@ -11,11 +11,11 @@ const loginButton = () => {
                     <span style="font-size: 5em; color: Tomato;"></span>
                     <h1>PINTEREST</h1>
                     <button id="google-auth" class="btn btn-primary btn-lg">
-                    <i class="fab fa-google"></i>Google Login
+                    <i class="fab fa-google"></i>oogle Login
                     </button>
                     </div>`;
 
-  $('#auth').html(domString);
+  $('#app').html(domString);
   $('#google-auth').on('click', signMeIn);
 };
 
