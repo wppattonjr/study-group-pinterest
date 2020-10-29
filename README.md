@@ -9,3 +9,5 @@ This is a CRUD application that mimics the popular Pinterest website. It utilize
  - Firebase
 
 ## Build Status
+Deployed:
+ [Live Site](https://fir-pinterest-7f6a3.web.app)
