@@ -2,7 +2,7 @@ import pinData from '../../helpers/data/pinData';
 import boardData from '../../helpers/data/boardData';
 
 const updatePinForm = (pinObj, userId) => {
-  $('#update-pin-form').html(`<h3>Update Your Pin</h3>
+  $('#update-pin-form').html(`<h2>Update Your Pin</h2>
   <div id="success"></div>
   <form>
   <div id="error-message"></div>
@@ -12,7 +12,7 @@ const updatePinForm = (pinObj, userId) => {
           </div>
           <div class="form-group">
             <label for="URL">Website Url</label>
-            <input type="text" class="form-control" value="${pinObj.website}" id="website" placeholder="Enter pin Url">
+            <input type="text" class="form-control" value="${pinObj.url}" id="website" placeholder="Enter pin Url">
           </div>
           <div class="form-group">
             <label for="image">Image Url</label>
@@ -21,7 +21,7 @@ const updatePinForm = (pinObj, userId) => {
             <div class="form-group">
               <label for="board">Board</label>
                 <select class="form-control" id="board">
-                  <option value="">Select A Board</option>
+                  <option value="">Please Select A Board</option>
                 </select>
             </div>
           <button id="update-pin-btn" type="submit" class="btn btn-info"><i class="fas fa-plus-circle"></i> Update Pin</button>
@@ -29,11 +29,9 @@ const updatePinForm = (pinObj, userId) => {
 
   boardData.getUserBoards(userId).then((response) => {
     response.forEach((item) => {
-      $('select').append(
-        `<option value="${item.uid}" ${
-          pinObj.boardUid === item.uid ? "selected ='selected'" : ''
-        }>${item.name}</option>`
-      );
+      $('select').append(`<option value="${item.uid}" ${
+        pinObj.boardUid === item.uid ? "selected ='selected'" : ''
+      }>${item.name}</option>`);
     });
   });
   $('#update-pin-btn').on('click', (e) => {
@@ -41,7 +39,7 @@ const updatePinForm = (pinObj, userId) => {
 
     const data = {
       name: $('#name').val() || false,
-      website: $('#website').val() || false,
+      url: $('#website').val() || false,
       image: $('#image').val() || false,
       boardUid: $('#board').val() || false,
     };
@@ -53,7 +51,7 @@ const updatePinForm = (pinObj, userId) => {
     } else {
       $('#error-message').html('');
       pinData
-        .updateAPin(data, pinObj.uid)
+        .updateAPin(pinObj.uid, data)
         .then(() => {
           $('#success-message').html(
             '<div class="alert alert-success" role="alert">Your Pin Was Updated!</div>'

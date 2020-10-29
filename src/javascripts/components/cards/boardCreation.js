@@ -8,7 +8,7 @@ const boardMaker = (boardObject) => {
           <h5 class="card-title">${boardObject.name}</h5>
           <a href="#" class="btn btn-primary display-pins" id="${boardObject.uid}">See Pins</a>
           <button id="${boardObject.uid}" class="btn btn-info update-board-btn">Update Board</button>
-          <a href="#" class="btn btn-danger delete-board" id="${boardObject.uid}">Delete Board</a>
+          <button class="btn btn-danger delete-board" id="${boardObject.uid}">Delete Board</button>
         </div>
       </div>`;
 
