@@ -16,14 +16,14 @@ const viewHelper = (id, user, arg) => {
     case 'add-pin-link':
       return addPinView.addPinView(user);
     case 'update-pin-link':
-      return updateThePin.updatePinView(user, arg);
+      return updateThePin.updatePinView(arg, user);
     default:
       return console.warn('nothing clicked');
   }
 };
 
 const viewListener = (view, user) => {
-  viewHelper(view);
+  viewHelper(view, user);
   $('body').on('click', 'li.nav-item', (e) => {
     viewHelper(e.currentTarget.id);
   });

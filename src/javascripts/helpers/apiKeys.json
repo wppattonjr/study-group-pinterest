@@ -1,0 +1,11 @@
+{
+  "firebaseKeys" : {
+    "apiKey": "AIzaSyBTrHtdG-BUBIKqb-BWLHFUm85VwTShaUs",
+    "authDomain": "fir-pinterest-7f6a3.firebaseapp.com",
+    "databaseURL": "https://fir-pinterest-7f6a3.firebaseio.com",
+    "projectId": "fir-pinterest-7f6a3",
+    "storageBucket": "fir-pinterest-7f6a3.appspot.com",
+    "messagingSenderId": "994859745620",
+    "appId": "1:994859745620:web:fcae5d6642b34e6dc248c1"
+  }
+}
