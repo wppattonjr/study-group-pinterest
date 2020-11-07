@@ -6,3 +6,17 @@
 .hide {
   display: none;
 }
+
+#app {
+  margin: auto;
+  margin-top: 50px;
+  width: 90%;
+}
+
+
+#app {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+  text-align: center;
+}
